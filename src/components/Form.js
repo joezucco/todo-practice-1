@@ -1,7 +1,12 @@
-const Form = (props) => {
+const Form = ({ setInputText }) => {
+  //Here I can write JS code and functions
+  const inputTextHandler = (e) => {
+    console.log(e.target.value);
+    setInputText(e.target.value);
+  };
   return (
     <form>
-      <input type='text' className='todo-input' />
+      <input onChange={inputTextHandler} type='text' className='todo-input' />
       <button className='todo-button'>
         <i className='fas fa-plus-square'></i>
       </button>
@@ -16,4 +21,4 @@ const Form = (props) => {
   );
 };
 
-export default Form
+export default Form;
